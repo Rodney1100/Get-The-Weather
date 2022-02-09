@@ -3,8 +3,8 @@ var formEl = document.getElementById("user-form");
 var formInput = document.getElementById("form-input");
 var buttonsForStates = document.getElementById("paddingD");
 var cd = document.querySelector(".cd");
-var now = new Date().toLocaleDateString()
-console.log(now)
+var myDate = new Date();
+
 // collects the city name and pass it in the url and then url to the fetch method
 var getURL = (city) => {
   var url =
@@ -15,7 +15,8 @@ var getURL = (city) => {
     .then(function (response) {
       if (response.ok) {
         response.json().then(function (data) {
-          cityResponses(data, city);
+          var i = 1
+          cityResponses(data, city,i);
         });
       } else {
         alert("Error: " + response.statusText);
@@ -27,13 +28,14 @@ var getURL = (city) => {
 };
 // collects the fetch information and display data on the index.html
 var currentDate = document.createElement("div");
-var cityResponses = (data, city) => {
+var cityResponses = (data, city,i) => {
   // information for the save day display
   currentDate.classList.add("container10");
   currentDate.innerHTML =
     "<div class='container1'> <h5><strong>" +
-    data.city.name + " "+
-    now+
+    data.city.name +
+    " " +
+    myDate.toLocaleDateString() +
     "</storng></h5> <img src='http://openweathermap.org/img/wn/" +
     data.list[0].weather[0].icon +
     ".png'> </div> <h6>Temp: " +
@@ -44,26 +46,28 @@ var cityResponses = (data, city) => {
     data.list[0].main.humidity +
     " % </h6> <h6>UV index: </h6>";
   cd.appendChild(currentDate);
-// for loop to display the 5 other days coming up
-  for (var i = 1; i < 6; i++) {
+  // for loop to display the 5 other days coming up
+  for (i=1; i < 6; i++) {
     var theOther5Days = document.getElementById(`${i}`);
+    myDate.setDate(myDate.getDate()+1);
     theOther5Days.innerHTML =
-      "<h5><strong>" +
-      now +
-      "</storng></h5> <img src='http://openweathermap.org/img/wn/" +
+      "<h6><strong>" +
+      myDate.toLocaleDateString() +
+      "</storng></h6> <img src='http://openweathermap.org/img/wn/" +
       data.list[i].weather[0].icon +
-      ".png'> <h6>Temp: " +
+      ".png'> <p>Temp: " +
       data.list[i].main.temp +
-      " F </h6> <h6>Wind: " +
+      " F </p> <p>Wind: " +
       data.list[i].wind.speed +
-      " MPH </h6> <h6>Humidity: " +
+      " MPH </p> <p>Humidity: " +
       data.list[i].main.humidity +
-      " % </h6> <h6>UV index: </h6>";
+      " % </p> <p>UV index: </p>";
   }
+myDate = new Date()
 };
 // collects input from the buttons
 function getCityBtn(event) {
-  var city = event.target.getAttribute('data-city')
+  var city = event.target.getAttribute("data-city");
   if (city) {
     getURL(city);
   }
@@ -74,8 +78,8 @@ function getCity(event) {
   var city = formInput.value.trim();
   if (city) {
     getURL(city);
-  currentDate.textContent = "";
-    formInput.value=""
+    currentDate.textContent = "";
+    formInput.value = "";
   }
 }
 // click events from the html index
