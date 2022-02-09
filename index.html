@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What's The Weather</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body class="">
+  <header>
+    <div class="col s12 m12">
+      <h4 class="brand-logo center blue">Weather Dashboard</h4>
+    </div>
+  </header>
+
+  <section>
+    <div class="container row leftSide">
+      <form id="user-form" class="input-field card-body">
+        <label class="autocomplete-input black-text">Search for a city</label>
+        <input id="form-input" type="text" class="form-input" />
+        <button id="searchBtn" class="col btn blue btns s12 m12">Search</button>
+      </form>
+      <div id="paddingD" class="row ">
+        <button data-city="Austin" class="col btns btn s12 m12">Austin</button>
+        <button data-city="Chicago" class="col btn m12 btns s12">Chicago</button>
+        <button data-city="New York" class="col btn m12 btns s12">New York</button>
+        <button data-city="Orlando" class="col s12 btns btn m12">Orlando</button>
+        <button data-city="San Francisco" class="col s12 btns btn m12">San Francisco</button>
+        <button data-city="Seattle" class="col s12 btns btn m12">Seattle</button>
+        <button data-city="Denver" class="col m12 btns btn s12">Denver</button>
+        <button data-city="Atlanta" class="col m12 btns btn s12">Atlanta</button>
+      </div>
+    </div>
+    <div class="container rightSide">
+      <div class="cd blue-grey lighten-4 answerDisplay">
+      </div>
+      <div class="fiveDay">
+        <h5>5-Day Forecast</h5>
+      </div>
+      <div class="row container1 justContent">
+        <div class="s12 m12 days">
+          <div class="blue-grey">
+            <div id="1" class="white-text d1 marginIn">
+            </div>
+          </div>
+        </div>
+        <div class="s12 m12 d2 days">
+          <div class="blue-grey">
+            <div id="2" class="white-text marginIn">
+            </div>
+          </div>
+        </div>
+        <div class="s12 m12 days">
+          <div class="blue-grey">
+            <div id="3" class="white-text d5 marginIn">
+            </div>
+          </div>
+        </div>
+        <div class="s12 m12 days">
+          <div class="blue-grey">
+            <div id="4" class="white-text d4 marginIn">
+            </div>
+          </div>
+        </div>
+        <div class="s12 m12 days2">
+          <div class="blue-grey">
+            <div id="5" class="white-text d5 marginIn">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+  integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="./assets/js/app.js"></script>
+
+</html>

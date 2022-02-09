@@ -1,0 +1,119 @@
+body {
+  max-width: 96%;
+  margin: auto;
+  background-color: antiquewhite;
+}
+h4 {
+  padding: 10px;
+  font-weight: bolder;
+  border-radius: 15px;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  flex: 1;
+}
+
+.container1 {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px;
+}
+
+#searchBtn {
+  margin-bottom: 50px;
+}
+.container10 {
+  margin-left: 20px;
+}
+
+.paddingD {
+  margin-top: 70px;
+}
+
+.fiveDay {
+  margin-top: 30px;
+  padding: 0px;
+}
+.justContent {
+  justify-content: space-around;
+  align-items: stretch;
+}
+.leftSide {
+  max-width: 25%;
+  margin-right: 10px;
+}
+
+.rightSide {
+  max-width: 75%;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.answerDisplay {
+  border: solid rgba(77, 77, 79, 0.494) 1px;
+  display: flex 1;
+}
+
+.btns {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+  padding-left: 50px;
+  border-radius: 8px;
+}
+
+h3 {
+  margin-top: 0px;
+}
+
+.days {
+  padding: 0px;
+  max-width: 19%;
+  margin-right: 6px;
+}
+
+.days2 {
+  padding: 0px;
+  max-width: 19%;
+  margin-left: 0px;
+}
+.marginIn {
+  margin: 0px 6px;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    margin: 0px;
+    background-color: rgb(191, 191, 191);
+    max-width: 100%;
+    width: 100%;
+  }
+  .rightSide {
+    max-width: 100%;
+    width: 100%;
+  }
+  .leftSide {
+    max-width: 100%;
+    width: 100%;
+  }
+  #paddingD {
+    display: none;
+  }
+
+  section {
+    display: block;
+    flex-wrap: wrap;
+    padding: 0px;
+  }
+  .fiveDay {
+    margin-top: 2px;
+  }
+  .justContent {
+    margin: 0px;
+    flex-wrap: nowrap;
+  }
+}
