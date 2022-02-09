@@ -1,10 +1,10 @@
 // collectiong all my imports from index.html file
-var now = new Date();
 var formEl = document.getElementById("user-form");
 var formInput = document.getElementById("form-input");
 var buttonsForStates = document.getElementById("paddingD");
 var cd = document.querySelector(".cd");
-var now = new Date();
+var now = new Date().toLocaleDateString()
+console.log(now)
 // collects the city name and pass it in the url and then url to the fetch method
 var getURL = (city) => {
   var url =
@@ -32,7 +32,8 @@ var cityResponses = (data, city) => {
   currentDate.classList.add("container10");
   currentDate.innerHTML =
     "<div class='container1'> <h5><strong>" +
-    data.city.name +
+    data.city.name + " "+
+    now+
     "</storng></h5> <img src='http://openweathermap.org/img/wn/" +
     data.list[0].weather[0].icon +
     ".png'> </div> <h6>Temp: " +
@@ -48,7 +49,7 @@ var cityResponses = (data, city) => {
     var theOther5Days = document.getElementById(`${i}`);
     theOther5Days.innerHTML =
       "<h5><strong>" +
-      // now +
+      now +
       "</storng></h5> <img src='http://openweathermap.org/img/wn/" +
       data.list[i].weather[0].icon +
       ".png'> <h6>Temp: " +
