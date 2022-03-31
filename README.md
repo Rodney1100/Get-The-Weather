@@ -14,7 +14,7 @@ This web app will git you a quick 6 day view of the weather for what ever city i
 
 
 ## Installation
-No instalation needed, just open the application and start enterind cities
+No installation is needed, open the application and start entering cities
 https://rodney1100.github.io/Get-The-Weather/
 
 ## Usage
